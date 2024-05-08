@@ -1,0 +1,68 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{background-color: black;}
+        form{
+
+            height: 550px;width: 600px;
+            margin-top: 100px;
+            display: flex;align-items: center;justify-content: center;
+            flex-direction: column;
+            border: 3px solid rgb(179, 80, 237);
+            border-radius: 25px;
+           
+            margin-left: 30%;
+            background-color: rgb(17, 17, 19);
+        }
+        input{
+            width: 400px;height: 40px;
+            margin: 15px;
+            border-radius: 10px;
+            background-color: black;
+            border: 1px solid blueviolet;
+            color: darkmagenta;
+            font-size: larger;
+            box-shadow:  0px 0px 15px  rgb(166, 39, 205);
+        }
+        h1{
+            background-color: dodgerblue;
+            font: 700;
+        }
+        h2{font-size: 30px;}
+        button{height: 40px; width: 200px;
+        font-size: 25px;
+    background-color: black;color: dodgerblue;
+border-radius: 15px; border: 1px solid blueviolet;}
+::placeholder{font-size: 25px;color: dodgerblue;
+text-align: center;
+}
+span{color: rgb(151, 237, 205);}
+         
+        
+    </style>
+</head>
+<body>
+    <center><h1> {{key}}</h1></center>
+    <form action="{% url 'register' %}" method="post">
+        <h2><span>R</span>egistration <span>F</span>orm</h2>
+        {% csrf_token %}
+       
+        <input type="text" name="name" placeholder="Name" > <br>
+        
+        <input type="email" name="email" placeholder="Email"> <br>
+        
+        <input type="password" name="Password" placeholder="Password" > <br>
+       
+        <input type="number" name="contact" placeholder="Contact" > <br>
+        
+        <button  type="submit" value="Register">Register</button>
+        
+    </form>
+</body>
+</html>

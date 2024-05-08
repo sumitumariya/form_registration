@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            height: 500px;width: 600px;
+            /* background-color: blueviolet; */
+            display: flex;align-items: center;justify-content: center;
+            flex-direction: column;
+            border: 2px solid dodgerblue;
+        }
+        input{
+            width: 400px;height: 25px;
+            margin: 15px;
+        }
+    </style>
+</head>
+
+
+<body>
+    {{key}}
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        
+        <label for="">Email</label>
+        <input type="email" name="email" > <br>
+        <label for="">Password</label>
+        <input type="password" name="Password" > <br>
+       
+    
+        <button  type="submit" value="login">Register</button>
+    
+    </form>
+</body>
+</html>
